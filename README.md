@@ -1,4 +1,4 @@
-# Bibliotekssystem Design
+
 
 ```mermaid
 %% Combined Mermaid Diagram for Bibliotekssystem Design
