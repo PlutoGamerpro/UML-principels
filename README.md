@@ -28,43 +28,43 @@ flowchart TD
 
     subgraph ClassDiagram
         class Bruger {
-            +brugerID
-            +navn
-            +email
-            +lånerHistorik
-            +tilmeld()
-            +logInd()
-            +søgBøger()
-            +lånBøger()
-            +returnerBøger()
+            brugerID: int
+            navn: string
+            email: string
+            lånerHistorik: List
+            tilmeld()
+            logInd()
+            søgBøger()
+            lånBøger()
+            returnerBøger()
         }
 
         class Bibliotekar {
-            +bibliotekarID
-            +navn
-            +email
-            +logInd()
-            +tilføjBøger()
-            +fjernBøger()
-            +administrerLån()
+            bibliotekarID: int
+            navn: string
+            email: string
+            logInd()
+            tilføjBøger()
+            fjernBøger()
+            administrerLån()
         }
 
         class Bog {
-            +bogID
-            +titel
-            +forfatter
-            +tilgængelig
-            +opdaterTilgængelig()
+            bogID: int
+            titel: string
+            forfatter: string
+            tilgængelig: boolean
+            opdaterTilgængelig()
         }
 
         class Lån {
-            +lånID
-            +brugerID
-            +bogID
-            +lånedato
-            +afleveringsdato
-            +opretLån()
-            +afslutLån()
+            lånID: int
+            brugerID: int
+            bogID: int
+            lånedato: date
+            afleveringsdato: date
+            opretLån()
+            afslutLån()
         }
     end
 
