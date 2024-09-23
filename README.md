@@ -1,4 +1,4 @@
-# Bibliotekssystem Design
+# UML-principels
 
 ## Flowchart
 ```mermaid
