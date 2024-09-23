@@ -9,6 +9,7 @@ flowchart TD
     D --> E[Lån bog / Returner bog]
     E --> F[Opdater database]
     F --> G[Slut]
+
 graph TD
     A[Bruger] -->|tilmelder sig| B[System]
     A -->|logger ind| B
@@ -20,6 +21,7 @@ graph TD
     C -->|tilføjer bøger| B
     C -->|fjerner bøger| B
     C -->|administrerer lån| B
+
 classDiagram
     class Bruger {
         +brugerID
@@ -60,6 +62,7 @@ classDiagram
         +opretLån()
         +afslutLån()
     }
+
 sequenceDiagram
     participant Bruger
     participant System
@@ -68,6 +71,9 @@ sequenceDiagram
     System->>Database: Valider bruger
     Database-->>System: Returner brugeroplysninger
     System-->>Bruger: Vis brugerinterface
+
+
+
 graph TD
     A[Tilmeld dig] --> B[Log ind]
     B --> C[Søg efter bøger]
