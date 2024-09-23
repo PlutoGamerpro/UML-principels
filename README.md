@@ -1,4 +1,3 @@
-# UML-principels
 # Bibliotekssystem Design
 
 ## Flowchart
@@ -10,7 +9,6 @@ flowchart TD
     D --> E[Lån bog / Returner bog]
     E --> F[Opdater database]
     F --> G[Slut]
-%%{init: {'theme': 'default'}}%%
 graph TD
     A[Bruger] -->|tilmelder sig| B[System]
     A -->|logger ind| B
@@ -62,43 +60,17 @@ classDiagram
         +opretLån()
         +afslutLån()
     }
-classDiagram
-    class Bruger {
-        +brugerID
-        +navn
-        +email
-        +lånerHistorik
-        +tilmeld()
-        +logInd()
-        +søgBøger()
-        +lånBøger()
-        +returnerBøger()
-    }
-
-    class Bibliotekar {
-        +bibliotekarID
-        +navn
-        +email
-        +logInd()
-        +tilføjBøger()
-        +fjernBøger()
-        +administrerLån()
-    }
-
-    class Bog {
-        +bogID
-        +titel
-        +forfatter
-        +tilgængelig
-        +opdaterTilgængelig()
-    }
-
-    class Lån {
-        +lånID
-        +brugerID
-        +bogID
-        +lånedato
-        +afleveringsdato
-        +opretLån()
-        +afslutLån()
-    }
+sequenceDiagram
+    participant Bruger
+    participant System
+    participant Database
+    Bruger->>System: Log ind
+    System->>Database: Valider bruger
+    Database-->>System: Returner brugeroplysninger
+    System-->>Bruger: Vis brugerinterface
+graph TD
+    A[Tilmeld dig] --> B[Log ind]
+    B --> C[Søg efter bøger]
+    C --> D[Vælg bog]
+    D --> E[Lån eller returnér]
+    E --> F[Opdater systemstatus]
